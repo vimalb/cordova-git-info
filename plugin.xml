@@ -5,6 +5,7 @@
     <description>Cordova Git Info Plugin</description>
     <license>MIT</license>
     <keywords>cordova,git</keywords>
+    <hook src="hooks/git_info.js" type="before_prepare"/>
     <js-module src="www/gitInfo.js" name="gitInfo">
         <clobbers target="window.plugins.gitInfo"/>
     </js-module>

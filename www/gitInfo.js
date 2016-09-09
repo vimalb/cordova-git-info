@@ -1,6 +1,5 @@
 var gitInfo = {
-    COMMIT_HASH: "12345",
-    BUILD_DATE: "2016-07-07T15:13:35.693Z"
+    COMMIT_HASH: "UNKNOWN",
+    BUILD_DATE: "2000-01-01T00:00:00.000Z"
 }
-
 module.exports = gitInfo;
