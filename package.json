@@ -1,0 +1,26 @@
+{
+  "name": "cordova-plugin-git-info",
+  "cordova_name": "Git Info Plugin",
+  "version": "0.1.0",
+  "description": "Cordova plugin to embed git info into builds",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cordova-git"
+  ],
+  "author": "Vimal Bhalodia",
+  "license": "MIT",
+  "platforms": [
+    "ios",
+    "android",
+    "wp8",
+    "windows"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ]
+}
