@@ -1,10 +1,9 @@
 module.exports = function(ctx) {
 
-    var fs = ctx.requireCordovaModule('fs');
-    var path = ctx.requireCordovaModule('path');
-    var deferral = ctx.requireCordovaModule('q').defer();
-    var _ = ctx.requireCordovaModule('lodash');
-    var child_process = ctx.requireCordovaModule('child_process');
+    var fs = require('fs');
+    var path = require('path');
+    var _ = require('lodash');
+    var child_process = require('child_process');
 
     var projectRoot = ctx.opts.projectRoot;
     var pluginName = ctx.opts.plugin.id;
@@ -18,7 +17,8 @@ module.exports = function(ctx) {
 		});
 	`;
 
-	child_process.execFile("git", ["rev-parse", "HEAD"], {cwd: projectRoot}, function(error, stdout, stderr) {
+  return new Promise((res) => {
+    child_process.execFile("git", ["rev-parse", "HEAD"], {cwd: projectRoot}, function(error, stdout, stderr) {
       var commitHash = stdout.trim();
       var buildDate = (new Date()).toISOString();
       var gitInfoContent = gitInfoTemplate
@@ -32,10 +32,9 @@ module.exports = function(ctx) {
       	console.log("git_info updated", infoFile);
       });
 
-      deferral.resolve();
+      res();
     });
-
-    return deferral.promise;
+  });
 };
 
 
